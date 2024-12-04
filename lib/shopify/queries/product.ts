@@ -8,7 +8,6 @@ export const getProductQuery = /* GraphQL */ `
   }
   ${productFragment}
 `;
-
 export const getProductsQuery = /* GraphQL */ `
   query getProducts($sortKey: ProductSortKeys, $reverse: Boolean, $query: String) {
     products(sortKey: $sortKey, reverse: $reverse, query: $query, first: 100) {

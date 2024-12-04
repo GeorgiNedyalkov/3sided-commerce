@@ -1,6 +1,7 @@
 import productFragment from '../fragments/product';
 import seoFragment from '../fragments/seo';
 
+// prettier-ignore
 const collectionFragment = /* GraphQL */ `
   fragment collection on Collection {
     handle
@@ -10,19 +11,19 @@ const collectionFragment = /* GraphQL */ `
       ...seo
     }
     updatedAt
-  }
-  ${seoFragment}
+  }${seoFragment}
 `;
 
+// prettier-ignore
 export const getCollectionQuery = /* GraphQL */ `
   query getCollection($handle: String!) {
     collection(handle: $handle) {
       ...collection
     }
-  }
-  ${collectionFragment}
+  }${collectionFragment}
 `;
 
+// prettier-ignore
 export const getCollectionsQuery = /* GraphQL */ `
   query getCollections {
     collections(first: 100, sortKey: TITLE) {
@@ -32,10 +33,10 @@ export const getCollectionsQuery = /* GraphQL */ `
         }
       }
     }
-  }
-  ${collectionFragment}
+  }${collectionFragment}
 `;
 
+// prettier-ignore
 export const getCollectionProductsQuery = /* GraphQL */ `
   query getCollectionProducts(
     $handle: String!
@@ -51,6 +52,5 @@ export const getCollectionProductsQuery = /* GraphQL */ `
         }
       }
     }
-  }
-  ${productFragment}
+  }${productFragment}
 `;
